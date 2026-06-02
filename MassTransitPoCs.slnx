@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/BaseContext/">
+    <Project Path="BaseContextPoC/BaseContextPoC.csproj" />
+  </Folder>
+  <Folder Name="/ChannelBasedTests/">
+    <Project Path="ChanelBasedTest.Module/ChanelBasedTest.Module.csproj" />
+    <Project Path="ChanelBasedTest.Shared/ChanelBasedTest.Shared.csproj" />
+    <Project Path="ChanelBasedTest/ChanelBasedTest.csproj" />
+    <Project Path="ChannelBasedTest.Data/ChannelBasedTest.Data.csproj" />
+  </Folder>
+  <Folder Name="/IdeaFromChris/">
+    <Project Path="Test.Module/Test.Module.csproj" />
+    <Project Path="Test/Test.csproj" />
+  </Folder>
+</Solution>

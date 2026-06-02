@@ -49,8 +49,10 @@ builder.Services.AddOptions<MassTransitHostOptions>()
         options.WaitUntilStarted = true;
     });
 
+
 builder.Services.AddDbContext<WillowContext>(configureDbContext);
-builder.Services.AddScoped<DbContext, WillowContext>();
+// This is required for the outbox to work, if we skip the service provider the publish endpoint didn't track the changes
+builder.Services.AddScoped<DbContext>(sp => sp.GetRequiredService<WillowContext>());
 
 
 builder.Services.AddHostedService<NonModuleWorker>();

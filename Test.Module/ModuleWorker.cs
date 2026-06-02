@@ -26,7 +26,7 @@ public class ModuleWorker : BackgroundService
         while (!stoppingToken.IsCancellationRequested)
         {
             var entity = new ModuleEntity() { Name = $"MassTransit Outbox Message {messageCounter}"};
-            //dbContext.Set<ModuleEntity>().Add(entity);
+            dbContext.Set<ModuleEntity>().Add(entity);
 
             Console.WriteLine($"Publishing ModuleBasedMessage: {entity.Name}");
             await publishEndpoint.Publish(new ModuleBasedMessage() { Id = entity.Id, Name = entity.Name}, stoppingToken);
